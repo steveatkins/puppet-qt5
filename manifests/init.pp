@@ -13,7 +13,7 @@ class qt5 {
   }
 
   package { 'boxen/brews/qt5':
-    ensure  => '5.1.0-boxen1',
+    ensure  => '5.0.2-boxen2',
     require => Class['xquartz'],
   }
 }

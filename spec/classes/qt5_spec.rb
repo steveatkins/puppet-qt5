@@ -13,6 +13,6 @@ describe 'qt5' do
     should include_class('xquartz')
 
     should contain_homebrew__formula('qt5')
-    should contain_package('boxen/brews/qt5').with_ensure('5.1.0-boxen1')
+    should contain_package('boxen/brews/qt5').with_ensure('5.0.2-boxen2')
   end
 end
