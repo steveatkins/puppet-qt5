@@ -2,12 +2,12 @@ require 'formula'
 
 class Qt5 < Formula
   homepage 'http://qt-project.org/'
-  url 'http://download.qt-project.org/official_releases/qt/5.0/5.0.2/single/qt-everywhere-opensource-src-5.0.2.tar.gz'
-  sha1 '7df93ca2cc5274f0cef72ea71f06feed2594b92f'
+  url 'http://download.qt-project.org/official_releases/qt/5.3/5.3.2/single/qt-everywhere-opensource-src-5.3.2.tar.gz'
+  sha1 '502dd2db1e9ce349bb8ac48b4edf7f768df1cafe'
 
   head 'git://gitorious.org/qt/qt5.git', :branch => 'stable'
 
-  version "5.0.2-boxen2"
+  version "5.3.2-boxen"
 
   keg_only "Qt 5 conflicts Qt 4 (which is currently much more widely used)."
 
@@ -42,6 +42,7 @@ class Qt5 < Formula
     args << "-L#{MacOS::X11.lib}" << "-I#{MacOS::X11.include}" if MacOS::X11.installed?
 
     args << "-plugin-sql-mysql" if build.with? 'mysql'
+    args << "-qt-sql-psql" if build.with? 'psql'
 
     if build.with? 'd-bus'
       dbus_opt = Formula.factory('d-bus').opt_prefix
