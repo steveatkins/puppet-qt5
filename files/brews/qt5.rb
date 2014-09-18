@@ -31,9 +31,6 @@ class Qt5 < Formula
             "-nomake", "examples",
             "-release"]
 
-    # In latest head `-nomake demos` is no longer recognized
-    args << "-nomake" << "demos" unless build.head?
-
     unless MacOS::CLT.installed?
       # ... too stupid to find CFNumber.h, so we give a hint:
       ENV.append 'CXXFLAGS', "-I#{MacOS.sdk_path}/System/Library/Frameworks/CoreFoundation.framework/Headers"
