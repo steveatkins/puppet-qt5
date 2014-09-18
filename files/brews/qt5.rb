@@ -49,9 +49,6 @@ class Qt5 < Formula
       args << "-ldbus-1"
     end
 
-    unless build.with? 'docs'
-      args << "-nomake" << "docs"
-    end
 
     if MacOS.prefer_64_bit? or build.universal?
       args << '-arch' << 'x86_64'
